@@ -6,7 +6,8 @@
 	{
 		register_user($_POST);
 	}
-	else if(isset($_POST['action']) && $_POST['action'] == 'logmein')
+
+	if(isset($_POST['action']) && $_POST['action'] == 'logmein')
 	{
 		login_user($_POST);
 	}
@@ -19,6 +20,7 @@
 
 	function register_user($post) // This $post is just a parameter, it is not the actual $_POST
 	{
+		$_SESSION['errors'] = array();
 		// Assigning more secure variables to important fields using escape_this_string function
 		$username = escape_this_string($post['username']);
 		$email = escape_this_string($post['email']);
@@ -26,7 +28,7 @@
 
 		
 		// Beginning of validation checks
-		$_SESSION['errors'] = array();
+		
 		// Attempt at validating existing information
 		$check_data_query = "SELECT users.username, users.email FROM users";
 		$existing_users = fetch_all($check_data_query);
@@ -117,6 +119,14 @@
 			exit();
 		}
 		// End of validation checks
+
+		// Check to see if $user is empty
+		if (empty($user)) 
+		{
+			$_SESSION['errors'][] = "There are no users present in the database";
+			header('Location: main.php');
+			exit();
+		}
 
 		// If $user comes back as not empty, then the inputted password gets encrypted to match the encrypted password in the database
 		else if (!empty($user)) 

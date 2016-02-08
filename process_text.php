@@ -39,7 +39,8 @@
 		}
 		if(!empty($post['comment']))
 		{
-			$query = "INSERT INTO comments (message_id, user_id, comment, created_at, updated_at) VALUES ('{$_SESSION['message_id']}', '{$_SESSION['user_id']}', '{$post['comment']}', NOW(), NOW())";
+			$query = "INSERT INTO comments (message_id, user_id, comment, created_at, updated_at) 
+					  VALUES ('{$_SESSION['message_id']}', '{$_SESSION['user_id']}', '{$post['comment']}', NOW(), NOW())";
 			run_mysql_query($query);
 			header('Location: wall.php');
 			exit();

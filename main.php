@@ -17,7 +17,7 @@
 		<div class="header">
 			<h1>The Wall</h1>
 			<ul class="nav">
-				<li><a href='main.php'>Home</a></li>
+				<li><a href='process.php'>Home</a></li>
 			</ul>
 		</div>
 		<div class="reg-wrapper">
@@ -49,16 +49,16 @@
 				<p>Confirm Password: <input class="inputs" type="password" name="confirm_password"></p>
 				<p><input class="input-btn" type="submit" value="Register"></p>
 			</form>
+			<div class="login-container">
+				<h1>Log In</h1>
+				<form action="process.php" method="post">
+					<input type="hidden" name="action" value="logmein">
+					<p>Username: <input class="inputs" type="text" name="username"></p>
+					<p>Email Address: <input class="inputs" type="text" name="email"></p>
+					<p>Password: <input class="inputs" type="password" name="password"></p>
+					<p><input class="input-btn" type="submit" value="Log Me In"></p>
+				</form>
 		</div>
-		<div class="login-container">
-			<h1>Log In</h1>
-			<form action="process.php" method="post">
-				<input type="hidden" name="action" value="logmein">
-				<p>Username: <input class="inputs" type="text" name="username"></p>
-				<p>Email Address: <input class="inputs" type="text" name="email"></p>
-				<p>Password: <input class="inputs" type="password" name="password"></p>
-				<p><input class="input-btn" type="submit" value="Log Me In"></p>
-			</form>
 		</div>
 	</div>
 </body>
