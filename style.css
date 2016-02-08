@@ -139,7 +139,6 @@ p, h1 {
 	width: 80%;
 	height: 50%;
 	margin: 0 auto;
-	overflow-y: scroll;
 }
 
 .content-m, .content-c {
@@ -157,4 +156,8 @@ p, h1 {
 .blank {
 	color: red;
 	text-align: center;
+}
+
+.o-list {
+	margin-left: 35%;
 }

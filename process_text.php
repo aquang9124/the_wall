@@ -29,8 +29,9 @@
 		}
 	}
 
-	function insert_comment($post)
+	function insert_comment($post) // This is just a parameter called $post, it takes $_POST as its input
 	{
+		// Making sure that comment is not empty, don't want any empty comments clogging up my database
 		if(empty($post['comment']))
 		{
 			$_SESSION['blank'] = "Your comment cannot be blank!";
@@ -40,7 +41,7 @@
 		if(!empty($post['comment']))
 		{
 			$query = "INSERT INTO comments (message_id, user_id, comment, created_at, updated_at) 
-					  VALUES ('{$_SESSION['message_id']}', '{$_SESSION['user_id']}', '{$post['comment']}', NOW(), NOW())";
+					  VALUES ('{$post['message_id']}', '{$_SESSION['user_id']}', '{$post['comment']}', NOW(), NOW())";
 			run_mysql_query($query);
 			header('Location: wall.php');
 			exit();
