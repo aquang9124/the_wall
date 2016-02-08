@@ -101,6 +101,7 @@ p, h1 {
 	#header .log-me-out {
 		vertical-align: top;
 		margin-left: 40px;
+		color: white;
 	}
 
 #main-content {
@@ -135,5 +136,25 @@ p, h1 {
 }
 
 .messages-box {
-	
+	width: 80%;
+	height: 50%;
+	margin: 0 auto;
+	overflow-y: scroll;
+}
+
+.content-m, .content-c {
+	color: black;
+}
+
+.comment-btn {
+	border-style: none;
+	border: 1px solid black;
+	box-shadow: 1px 2px 2px black;
+	background-color: blue;
+	color: white;
+}
+
+.blank {
+	color: red;
+	text-align: center;
 }
